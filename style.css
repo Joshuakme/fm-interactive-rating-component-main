@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Background Color */
+  --bg-primary-500: hsl(25, 97%, 53%);
+
+  --bg-neutral-100: hsl(0, 0%, 100%);
+  --bg-neutral-300: hsl(217, 12%, 63%);
+  --bg-neutral-500: hsl(216, 12%, 54%);
+  --bg-neutral-700: hsl(213, 19%, 18%);
+  --bg-neutral-900: hsl(216, 12%, 8%);
+
+  /* Text Color*/
+  --text-primary-500: hsl(25, 97%, 53%);
+
+  --text-neutral-100: hsl(0, 0%, 100%);
+  --text-neutral-300: hsl(217, 12%, 63%);
+  --text-neutral-500: hsl(216, 12%, 54%);
+  --text-neutral-700: hsl(213, 19%, 18%);
+  --text-neutral-900: hsl(216, 12%, 8%);
+
+  --card-gradient: linear-gradient(
+    hsla(213, 19%, 18%, 1),
+    hsla(213, 19%, 18%, 0.7)
+  );
+
+  /* Font Family */
+  --ff-primary: "Overpass", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+  color: var(--text-neutral-100);
+  font-size: 100%;
+  font-family: var(--ff-primary);
+  background-color: var(--bg-neutral-900);
+}
+
+p {
+  font-size: 93.75%; /* 15px */
+}
+
+/* Card */
+.card {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.9em 1.5em;
+  width: 90vw;
+  max-width: 21.25rem;
+  aspect-ratio: 1 / 1.2;
+  font-size: 1rem;
+  text-align: left;
+  background: var(--bg-neutral-700);
+  border-radius: 1em;
+  transform: translate(0, -50%);
+}
+
+.card img#star {
+  width: 2.5rem;
+  aspect-ratio: 1 / 1;
+  font-size: 0.9rem;
+  margin-bottom: 1em;
+  padding: 0.8em;
+  background-color: hsla(0, 0%, 100%, 0.045);
+  border-radius: 50%;
+}
+
+.card h2 {
+  font-size: 1.875rem;
+  margin-bottom: 0.9rem;
+}
+
+.card p {
+  font-size: 0.9375rem;
+  color: var(--text-neutral-300);
+  line-height: 1.5;
+  margin-bottom: 1.875rem;
+}
+
+.card .rate-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.card .rate-value span {
+  text-align: center;
+  height: 2.5rem;
+  aspect-ratio: 1 / 1;
+  font-size: 0.9375rem;
+  color: var(--bg-neutral-300);
+  padding: 0.75em;
+  background-color: hsla(0, 0%, 100%, 0.045);
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+}
+
+.card .rate-value span.active {
+  color: var(--bg-neutral-100);
+  background-color: var(--bg-primary-500);
+}
+
+.card .rate-value span:hover {
+  color: var(--bg-neutral-100);
+  background-color: hsla(0, 0%, 100%, 0.5);
+}
+
+.card button {
+  width: 100%;
+  padding: 1em 1.5em;
+  color: var(--bg-neutral-100);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  background-color: var(--bg-primary-500);
+  border: 1px solid var(--bg-primary-500);
+  border-radius: 2em;
+  cursor: pointer;
+
+  transition: color 250ms ease-in-out, background-color 250ms ease-in-out,
+    border 250ms ease-in-out;
+}
+
+.card button:hover {
+  color: var(--bg-primary-500);
+  background-color: var(--bg-neutral-100);
+  border: 1px solid var(--bg-neutral-100);
+}
+
+.card#feedback-response {
+  display: none;
+  text-align: center;
+}
+
+.card#feedback-response img {
+  font-size: 1rem;
+  margin-bottom: 1.5em;
+}
+
+.card#feedback-response img + p {
+  width: max-content;
+  height: 2rem;
+  margin: auto;
+  margin-bottom: 2em;
+  padding: 0.3em 1.3em;
+  color: var(--bg-primary-500);
+  line-height: 2rem;
+  background-color: hsla(0, 0%, 100%, 0.045);
+  border-radius: 2rem;
+}
+
+.card#feedback-response p:last-child {
+  margin-bottom: 0em;
+}
+
+/* Attribution Section */
+.attribution {
+  margin-top: 1em;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--bg-primary-500);
+}
+
+/* Desktop View */
+@media (min-width: 1440px) {
+  /* Card */
+  .card {
+    max-width: 26.25rem;
+    aspect-ratio: 1.3 / 1;
+  }
+
+  .card .rate-value {
+    margin-bottom: 1.75em;
+  }
+
+  .card .rate-value span {
+    height: 2.8rem;
+    font-size: 1rem;
+    padding: 0.85em;
+  }
+
+  .card button {
+    width: 100%;
+    padding: 0.75em 1.5em;
+    color: var(--bg-neutral-100);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background-color: var(--bg-primary-500);
+    border: 1px solid var(--bg-primary-500);
+    border-radius: 2em;
+  }
+}
+
+.card-fade-out {
+  animation: fade-out 500ms ease-out forwards;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 100%;
+  }
+
+  99.9% {
+    opacity: 0%;
+  }
+
+  100% {
+    display: none;
+  }
+}
+
+.card-fade-in {
+  animation: fade-in 500ms ease-out forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    display: none;
+    opacity: 0%;
+  }
+
+  99.9% {
+    opacity: 100%;
+  }
+  100% {
+    display: block !important;
+  }
+}
